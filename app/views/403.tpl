@@ -2,5 +2,5 @@
 
 @section('content')
     <h1>Access restricted</h1>
-    Forbidden
+    <p>Forbidden</p>
 @stop
