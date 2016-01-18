@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Kernel\Application;
+use Kernel\Exceptions\HttpForbiddenException;
 use Kernel\Response;
 use Kernel\Validator;
 use Kernel\View;
@@ -59,7 +60,7 @@ class UserController
         if ($user instanceof User) {
             return View::make('register_done')->with('user', $user)->with('pageTitle', 'Register done');
         } else {
-            return View::make('access_restricted');
+            throw new HttpForbiddenException();
         }
     }
 

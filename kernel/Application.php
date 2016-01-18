@@ -2,6 +2,9 @@
 
 namespace Kernel;
 
+use Kernel\Exceptions\HttpForbiddenException;
+use Kernel\Exceptions\HttpNotFoundException;
+
 class Application
 {
     protected static $instance;
@@ -36,7 +39,13 @@ class Application
 
         require APP_DIR . 'routes.php';
 
-        $response = $this->getRouter()->dispatch($this->getRequest());
+        try {
+            $response = $this->getRouter()->dispatch($this->getRequest());
+        } catch (HttpNotFoundException $e) {
+            $response = $e->handle();
+        } catch (HttpForbiddenException $e) {
+            $response = $e->handle();
+        }
         $response->send();
 
         return $this;

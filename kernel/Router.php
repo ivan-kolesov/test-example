@@ -2,6 +2,9 @@
 
 namespace Kernel;
 
+use Kernel\Exceptions\BaseException;
+use Kernel\Exceptions\HttpNotFoundException;
+
 class Router
 {
     protected $routes = [];
@@ -33,6 +36,7 @@ class Router
     /**
      * @param Request $request
      * @return Response
+     * @throws BaseException
      */
     public function dispatch(Request $request)
     {
@@ -46,11 +50,9 @@ class Router
              * @var Route $route
              */
             $route = reset($routes);
-            $response = $route->run();
+            return $route->run();
         } else {
-            $response = new Response();
+            throw new HttpNotFoundException($request->getBaseUrl());
         }
-
-        return $response;
     }
 }
