@@ -18,16 +18,16 @@
 ## Configuring web server
 
 - On Apache:
-    - create `.htaccess` file into `public` directory with following rules:
-        Options +FollowSymLinks
-        RewriteEngine On
+    - create `.htaccess` file into `public` directory with following rules:  
+        Options +FollowSymLinks  
+        RewriteEngine On  
        
-        RewriteCond %{REQUEST_FILENAME} !-d
-        RewriteCond %{REQUEST_FILENAME} !-f
-        RewriteRule ^ index.php [L]
+        RewriteCond %{REQUEST_FILENAME} !-d  
+        RewriteCond %{REQUEST_FILENAME} !-f  
+        RewriteRule ^ index.php [L]  
 
 - On Nginx:
-    - add following directives to your config:
-        location / {
-            try_files $uri $uri/ /index.php?$query_string;
+    - add following directives to your config:  
+        location / {  
+            try_files $uri $uri/ /index.php?$query_string;  
         }
