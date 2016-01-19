@@ -60,7 +60,8 @@ class Validator
                     $isValid = self::isPasswordsEquals($value, $model->$ruleSegmentValue);
                     break;
                 case 'mimes':
-                    $isValid = self::isExtensionValid($value, $ruleSegmentValue);
+                    /** @var UploadedFile $value */
+                    $isValid = $value->isValid() ? self::isExtensionValid($value, $ruleSegmentValue) : true;
                     break;
             }
 

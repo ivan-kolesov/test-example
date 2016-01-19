@@ -10,13 +10,13 @@
 
     <p><a href="/" data-key="linkBackToIndex">Back to index page</a></p>
 
-    <div class="errors hide">
+    <div class="errors {{ empty($errors) ? 'hide' : '' }}">
         <?php if (!empty($errors)) : ?>
         <ul>
             <?php foreach ($errors as $error) : ?>
-                <?php if (!empty(\Kernel\Config::get('app.errors')[$error])) : ?>
-                    <li>{{ \Kernel\Config::get('app.errors')[$error] }}</li>
-                <?php endif; ?>
+            <?php if (!empty(\Kernel\Config::get('app.errors')[$error])) : ?>
+            <li>{{ \Kernel\Config::get('app.errors')[$error] }}</li>
+            <?php endif; ?>
             <?php endforeach; ?>
         </ul>
         <?php endif; ?>

@@ -10,7 +10,7 @@
 
     <p><a href="/" data-key="linkBackToIndex">Back to index page</a></p>
 
-    <div class="errors hide">
+    <div class="errors {{ empty($errors) ? 'hide' : '' }}">
         <?php if (!empty($errors)) : ?>
             <ul>
             <?php foreach ($errors as $error) : ?>

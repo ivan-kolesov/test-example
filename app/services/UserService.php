@@ -12,6 +12,8 @@ class UserService
     private static $tableName = 'user';
 
     const ERROR_USER_NOT_FOUND = 'user.not_found';
+    const ERROR_USER_EMAIL_DUPLICATE = 'user.email_duplicate';
+    const ERROR_UNEXPECTED = 'user.unexpected';
 
     /**
      * @return User|null
@@ -38,6 +40,20 @@ class UserService
         if (false !== $result) {
             return new User($result);
         }
+    }
+
+    /**
+     * @param $email
+     * @return bool
+     */
+    public static function hasUserWithEmail($email)
+    {
+        $database = Application::getDatabase();
+
+        $sth = $database->prepare("SELECT COUNT(id) FROM " . self::$tableName . " WHERE email = ?");
+        $sth->execute([$email]);
+
+        return 0 < intval($sth->fetchColumn());
     }
 
     /**
@@ -126,7 +142,7 @@ class UserService
     private static function produceFullUserCategoryDir(User $user)
     {
         $directory = Config::get('app.userUploadDir');
-        return !empty($directory) ? $directory . self::produceUserCategoryDir() : null;
+        return !empty($directory) ? $directory . self::produceUserCategoryDir($user) : null;
     }
 
     /**
