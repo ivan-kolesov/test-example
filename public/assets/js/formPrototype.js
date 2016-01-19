@@ -15,6 +15,9 @@ formPrototype.prototype.isValid = function() {
 
 formPrototype.prototype.resetErrors = function() {
     this.errorContainer.innerText = '';
+    if (!this.errorContainer.classList.contains('hide')) {
+        this.errorContainer.classList.add('hide');
+    }
 };
 
 formPrototype.prototype.showErrors = function(errors) {
@@ -29,6 +32,10 @@ formPrototype.prototype.showErrors = function(errors) {
         });
         errorContainerHtml += '</ul>';
         this.errorContainer.innerHTML = errorContainerHtml;
+
+        if (this.errorContainer.classList.contains('hide')) {
+            this.errorContainer.classList.remove('hide');
+        }
     }
 };
 

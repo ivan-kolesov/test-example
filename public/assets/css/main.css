@@ -1,0 +1,107 @@
+body {
+    font-family: Arial;
+    padding: 0;
+    margin: 0;
+}
+
+div#header {
+    height: 50px;
+    background-color: #f01a9a;
+    color: white;
+    padding: 5px;
+}
+div#header div.siteTitle {
+    font-size: 2.4em;
+    padding-left: 10px;
+    float: left;
+}
+div#header div.account {
+    text-align: right;
+    padding-left: 80%;
+}
+div#header div.account div.info {
+    font-size: 0.8em;
+    text-align: left;
+}
+div#header div.account ul {
+    text-align: left;
+    list-style: none;
+    font-size: 0.8em;
+    padding-left: 0;
+}
+div#header a {
+    color: #ffffff;
+}
+
+div#content {
+    padding: 10px;
+}
+div#content > h1 {
+    font-size: 2em;
+    font-weight: 400;
+    margin-top: 10px;
+}
+form.table {
+    font-size: 1.1em;
+    line-height: 20px;
+}
+form.table > table {
+    border-collapse: collapse;
+    width: 100%;
+}
+form.table > table td {
+    vertical-align: top;
+    padding: 4px;
+    border-bottom: 1px solid #ddd;
+}
+form.table > table tr:nth-last-child(-n+2) td {
+    border-bottom: none;
+}
+form.table > table td:nth-child(1) {
+    width: 30%;
+}
+form.table > table td:nth-child(2) {
+    width: 70%;
+}
+form.table > table td:nth-child(2) button {
+    font-size: 1.3em;
+    color: #fff;
+    background-color: #f01a9a;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+form.table > table td > label+span {
+    padding-left: 5px;
+    color: #f01a9a;
+}
+form.table > table td > input:not([type="file"]), textarea {
+    font-size: 1.2em;
+    width: 100%;
+    border: 1px solid #dddddd;
+}
+
+div.errors {
+    border: solid 1px #f01a9a;
+    padding: 4px;
+    margin: 10px 0;
+}
+div.errors ul li {
+    color: #f01a9a;
+}
+div.errors.hide {
+    display: none;
+}
+
+table.userDetails {
+    border-collapse: collapse;
+    width: 100%;
+}
+table.userDetails td {
+    vertical-align: top;
+    padding: 4px;
+    border-bottom: 1px solid #ddd;
+}
+table.userDetails tr:nth-last-child(-n+1) td {
+    border-bottom: none;
+}

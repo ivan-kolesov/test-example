@@ -2,8 +2,11 @@ var dictionary = {
     elements: {},
 
     ru: {
+        linkBackToIndex: 'Назад на главную страницу',
+
         registrationTitle: 'Регистрация',
-        registrationSelectLanguage: 'Сменить язык',
+        loginTitle: 'Авторизация',
+        selectLanguage: 'Сменить язык',
 
         registrationFieldName: "Имя",
         registrationFieldLastName: 'Фамилия',
@@ -20,11 +23,18 @@ var dictionary = {
         registrationFieldAdditional: 'Дополнительные сведения',
         registrationFieldFilename: 'Фотография',
 
-        registrationButtonSubmit: 'Зарегистрироваться'
+        registrationButtonSubmit: 'Зарегистрироваться',
+
+        loginFieldEmail: 'Эл. почта',
+        loginFieldPassword: 'Пароль',
+        loginButtonSubmit: 'Авторизоваться'
     },
     en: {
+        linkBackToIndex: 'Back to index page',
+
         registrationTitle: 'Sign in',
-        registrationSelectLanguage: 'Change language',
+        loginTitle: 'Login',
+        selectLanguage: 'Change language',
 
         registrationFieldName: 'Name',
         registrationFieldLastName: 'Last Name',
@@ -41,7 +51,11 @@ var dictionary = {
         registrationFieldAdditional: 'Additional',
         registrationFieldFilename: 'Photo',
 
-        registrationButtonSubmit: 'Sign in'
+        registrationButtonSubmit: 'Sign in',
+
+        loginFieldEmail: 'Email',
+        loginFieldPassword: 'Password',
+        loginButtonSubmit: 'Login'
     },
 
     init: function () {
