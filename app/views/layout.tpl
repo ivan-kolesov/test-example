@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>{{ isset($pageTitle) ? $pageTitle : '' }}</title>
+        <title>Just site: {{ isset($pageTitle) ? $pageTitle : '' }}</title>
         <link media="all" type="text/css" rel="stylesheet" href="/assets/css/main.css">
     </head>
 <body>

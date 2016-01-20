@@ -41,27 +41,27 @@
             <tr>
                 <td><label for="last_name" data-key="registrationFieldLastName">Last name</label><span>*</span></td>
                 <td><input id="last_name" type="text" name="last_name"
-                       value="{{ !empty($user->last_name) ? $user->last_name : '' }}"></td>
+                    value="{{ !empty($user->last_name) ? $user->last_name : '' }}"></td>
             </tr>
             <tr>
                 <td><label for="middle_name" data-key="registrationFieldMiddleName">Middle name</label></td>
                 <td><input id="middle_name" type="text" name="middle_name"
-                       value="{{ !empty($user->middle_name) ? $user->middle_name : '' }}"></td>
+                    value="{{ !empty($user->middle_name) ? $user->middle_name : '' }}"></td>
             </tr>
             <tr>
                 <td><label for="birth_year" data-key="registrationFieldBirthYear">Birth year</label></td>
                 <td><input id="birth_year" type="number" name="birth_year" min="1900" max="2100"
-                       value="{{ !empty($user->birth_year) ? $user->birth_year : '' }}"></td>
+                    value="{{ !empty($user->birth_year) ? $user->birth_year : '' }}"></td>
             </tr>
             <tr>
                 <td><label for="location" data-key="registrationFieldLocation">Location</label></td>
                 <td><input id="location" type="text" name="location"
-                       value="{{ !empty($user->location) ? $user->location : '' }}"></td>
+                    value="{{ !empty($user->location) ? $user->location : '' }}"></td>
             </tr>
             <tr>
                 <td><label for="marital_status" data-key="registrationFieldMaritalStatus">Marital status</label></td>
                 <td><input id="marital_status" type="text" name="marital_status"
-                       value="{{ !empty($user->marital_status) ? $user->marital_status : '' }}"></td>
+                    value="{{ !empty($user->marital_status) ? $user->marital_status : '' }}"></td>
             </tr>
             <tr>
                 <td><label for="email" data-key="registrationFieldEmail">Email</label><span>*</span></td>
@@ -70,7 +70,7 @@
             <tr>
                 <td><label for="phone" data-key="registrationFieldPhone">Phone</label></td>
                 <td><input id="phone" type="text" name="phone" maxlength="15"
-                       value="{{ !empty($user->phone) ? $user->phone : '' }}"></td>
+                    value="{{ !empty($user->phone) ? $user->phone : '' }}"></td>
             </tr>
             <tr>
                 <td><label for="password" data-key="registrationFieldPassword">Password</label><span>*</span></td>

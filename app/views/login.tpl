@@ -14,9 +14,9 @@
         <?php if (!empty($errors)) : ?>
         <ul>
             <?php foreach ($errors as $error) : ?>
-            <?php if (!empty(\Kernel\Config::get('app.errors')[$error])) : ?>
-            <li>{{ \Kernel\Config::get('app.errors')[$error] }}</li>
-            <?php endif; ?>
+                <?php if (!empty(\Kernel\Config::get('app.errors')[$error])) : ?>
+                    <li>{{ \Kernel\Config::get('app.errors')[$error] }}</li>
+                <?php endif; ?>
             <?php endforeach; ?>
         </ul>
         <?php endif; ?>
