@@ -85,6 +85,8 @@ class User extends ModelBase
         $this->location = mb_substr(trim($this->location), 0, 255);
         $this->marital_status = mb_substr(trim($this->marital_status), 0, 255);
         $this->education = mb_substr(trim($this->education), 0, 255);
+        $this->experience = trim($this->experience);
         $this->phone = mb_substr(trim($this->phone), 0, 15);
+        $this->additional = trim($this->additional);
     }
 }

@@ -17,6 +17,8 @@
 
 ## Configuring web server
 
+- Set `public` directory as document root
+
 - On Apache:
     - create `.htaccess` file into `public` directory with following rules:  
         Options +FollowSymLinks  
