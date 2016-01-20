@@ -44,6 +44,13 @@ div#content > h1 {
 form.table {
     font-size: 1.1em;
     line-height: 20px;
+    background-color: #fafafa;
+    padding: 20px 10px;
+}
+form.table div.language {
+    text-align: right;
+    padding: 10px 0;
+    font-size: 0.7em;
 }
 form.table > table {
     border-collapse: collapse;

@@ -3,6 +3,9 @@
 @section('content')
     <h1>Registered</h1>
     <p>Your account have been registered</p>
+
+    <p><a href="/" data-key="linkBackToIndex">Back to index page</a></p>
+
     <p>
         Your name is: {{ $user->name }}
         <?php if (!empty($user->filename)) : ?>

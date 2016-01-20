@@ -35,23 +35,23 @@ class UserController
         $user->password_confirmed = $request->get('password_confirmed');
         $errors = Validator::validate($user);
 
+        if (UserService::hasUserWithEmail($user->email)) {
+            $errors[] = UserService::ERROR_USER_EMAIL_DUPLICATE;
+        }
+
         if (empty($errors)) {
 
-            if (UserService::hasUserWithEmail($user->email)) {
-                $errors[] = UserService::ERROR_USER_EMAIL_DUPLICATE;
-            } else {
-                if ($user->insert()) {
-                    if (UserService::saveUploadedFile($user)) {
-                        $user->filename = $user->file->getClientOriginalName();
-                        $user->update();
-                    }
-
-                    UserService::setCurrentUser($user);
-
-                    return Response::redirectUrl('/register_done');
-                } else {
-                    $errors[] = UserService::ERROR_UNEXPECTED;
+            if ($user->insert()) {
+                if (UserService::saveUploadedFile($user)) {
+                    $user->filename = $user->file->getClientOriginalName();
+                    $user->update();
                 }
+
+                UserService::setCurrentUser($user);
+
+                return Response::redirectUrl('/register_done');
+            } else {
+                $errors[] = UserService::ERROR_UNEXPECTED;
             }
         }
 

@@ -22,15 +22,17 @@
         <?php endif; ?>
     </div>
 
-    <label for="js-language" data-key="selectLanguage">Change language</label>
-    <select id="js-language">
-        <option value="en">English</option>
-        <option value="ru">Русский</option>
-    </select>
-
     <p>Please, filling the following form. Fields with <sup>*</sup> are required</p>
 
     <form method="post" action="/register" id="registerForm" enctype="multipart/form-data" class="table">
+        <div class="language">
+            <label for="js-language" data-key="selectLanguage">Change language</label>
+            <select id="js-language">
+                <option value="en">English</option>
+                <option value="ru">Русский</option>
+            </select>
+        </div>
+
         <table>
             <tr>
                 <td><label for="name" data-key="registrationFieldName">First name</label><span>*</span></td>
@@ -38,23 +40,28 @@
             </tr>
             <tr>
                 <td><label for="last_name" data-key="registrationFieldLastName">Last name</label><span>*</span></td>
-                <td><input id="last_name" type="text" name="last_name" value="{{ !empty($user->last_name) ? $user->last_name : '' }}"></td>
+                <td><input id="last_name" type="text" name="last_name"
+                       value="{{ !empty($user->last_name) ? $user->last_name : '' }}"></td>
             </tr>
             <tr>
                 <td><label for="middle_name" data-key="registrationFieldMiddleName">Middle name</label></td>
-                <td><input id="middle_name" type="text" name="middle_name" value="{{ !empty($user->middle_name) ? $user->middle_name : '' }}"></td>
+                <td><input id="middle_name" type="text" name="middle_name"
+                       value="{{ !empty($user->middle_name) ? $user->middle_name : '' }}"></td>
             </tr>
             <tr>
                 <td><label for="birth_year" data-key="registrationFieldBirthYear">Birth year</label></td>
-                <td><input id="birth_year" type="number" name="birth_year" value="{{ !empty($user->birth_year) ? $user->birth_year : '' }}"></td>
+                <td><input id="birth_year" type="number" name="birth_year" min="1900" max="2100"
+                       value="{{ !empty($user->birth_year) ? $user->birth_year : '' }}"></td>
             </tr>
             <tr>
                 <td><label for="location" data-key="registrationFieldLocation">Location</label></td>
-                <td><input id="location" type="text" name="location" value="{{ !empty($user->location) ? $user->location : '' }}"></td>
+                <td><input id="location" type="text" name="location"
+                       value="{{ !empty($user->location) ? $user->location : '' }}"></td>
             </tr>
             <tr>
                 <td><label for="marital_status" data-key="registrationFieldMaritalStatus">Marital status</label></td>
-                <td><input id="marital_status" type="text" name="marital_status" value="{{ !empty($user->marital_status) ? $user->marital_status : '' }}"></td>
+                <td><input id="marital_status" type="text" name="marital_status"
+                       value="{{ !empty($user->marital_status) ? $user->marital_status : '' }}"></td>
             </tr>
             <tr>
                 <td><label for="email" data-key="registrationFieldEmail">Email</label><span>*</span></td>
@@ -62,7 +69,8 @@
             </tr>
             <tr>
                 <td><label for="phone" data-key="registrationFieldPhone">Phone</label></td>
-                <td><input id="phone" type="text" name="phone" value="{{ !empty($user->phone) ? $user->phone : '' }}"></td>
+                <td><input id="phone" type="text" name="phone" maxlength="15"
+                       value="{{ !empty($user->phone) ? $user->phone : '' }}"></td>
             </tr>
             <tr>
                 <td><label for="password" data-key="registrationFieldPassword">Password</label><span>*</span></td>
@@ -74,19 +82,19 @@
             </tr>
             <tr>
                 <td><label for="education" data-key="registrationFieldEducation">Education</label></td>
-                <td><textarea id="education" name="education" rows="3">
+                <td><textarea id="education" name="education" rows="2">
                     {{ !empty($user->education) ? $user->education : '' }}</textarea>
                 </td>
             </tr>
             <tr>
                 <td><label for="experience" data-key="registrationFieldExperience">Experience</label></td>
-                <td><textarea id="experience" name="experience" rows="3">
+                <td><textarea id="experience" name="experience" rows="2">
                     {{ !empty($user->experience) ? $user->experience : '' }}</textarea>
                 </td>
             </tr>
             <tr>
                 <td><label for="additional" data-key="registrationFieldAdditional">Additional</label></td>
-                <td><textarea id="additional" name="additional" rows="3">
+                <td><textarea id="additional" name="additional" rows="2">
                     {{ !empty($user->additional) ? $user->additional : '' }}</textarea>
                 </td>
             </tr>

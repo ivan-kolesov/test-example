@@ -77,5 +77,14 @@ class User extends ModelBase
     {
         $this->birth_year = !empty($this->birth_year) ? intval($this->birth_year) : null;
         $this->data['birth_year'] = $this->birth_year;
+
+        $this->name = mb_substr($this->name, 0, 255);
+        $this->last_name = mb_substr($this->last_name, 0, 255);
+        $this->middle_name = mb_substr($this->middle_name, 0, 255);
+        $this->email = mb_substr($this->email, 0, 255);
+        $this->location = mb_substr($this->location, 0, 255);
+        $this->marital_status = mb_substr($this->marital_status, 0, 255);
+        $this->education = mb_substr($this->education, 0, 255);
+        $this->phone = mb_substr($this->phone, 0, 15);
     }
 }

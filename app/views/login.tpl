@@ -22,13 +22,15 @@
         <?php endif; ?>
     </div>
 
-    <label for="js-language" data-key="selectLanguage">Change language</label>
-    <select id="js-language">
-        <option value="en">English</option>
-        <option value="ru">Русский</option>
-    </select>
-
     <form method="post" action="/login" id="loginForm" class="table">
+        <div class="language">
+            <label for="js-language" data-key="selectLanguage">Change language</label>
+            <select id="js-language">
+                <option value="en">English</option>
+                <option value="ru">Русский</option>
+            </select>
+        </div>
+
         <table>
             <tr>
                 <td><label for="email" data-key="loginFieldEmail">Email</label></td>

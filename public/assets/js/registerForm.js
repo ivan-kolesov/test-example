@@ -60,7 +60,6 @@ var registerFormObject = function (form) {
     document.getElementById('js-register').addEventListener("click", function() {
         self.submit(false);
     });
-
 };
 registerFormObject.prototype = Object.create(formPrototype.prototype);
 new registerFormObject(document.getElementById('registerForm'));
